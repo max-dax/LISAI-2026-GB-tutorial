@@ -1,0 +1,26 @@
+# Local development environment for the tutorial. Participants run the notebook on
+# Colab, where torch/numpy/matplotlib are preinstalled and only glasflow and corner
+# are pip-installed by the first cell. This project exists so the notebook can be
+# executed and tested outside Colab: `uv run jupyter lab`.
+[project]
+name = "lisai-2026-gb-tutorial"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = [
+    "corner",
+    "glasflow",
+    "ipykernel",
+    "jupyter",
+    "matplotlib",
+    "nbconvert",
+    "numpy",
+    "scipy>=1.15.3",
+    "torch",
+]
+
+[dependency-groups]
+# Only so that the notebook's install cell can run outside Colab; uv venvs have no
+# pip by default.
+dev = [
+    "pip",
+]
